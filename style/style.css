@@ -1,0 +1,109 @@
+body {
+  background-image: url(../images/ferrari-cover.jpg);
+  color: white;
+  margin: 0px;
+  min-height: 900px;
+}
+body .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+body .wrapper .container {
+  max-width: 500px;
+  width: 100%;
+  padding: 0px 25px;
+  background-color: black;
+}
+body .wrapper .container p {
+  font-size: 3em;
+}
+body .wrapper .container.center {
+  text-align: center;
+}
+body .wrapper .container img {
+  width: 100%;
+}
+body .wrapper .container img.cover {
+  max-width: 200px;
+}
+body .wrapper .container .headline {
+  height: 75px;
+  overflow: hidden;
+  position: relative;
+  /* Move it (define the animation) */
+}
+body .wrapper .container .headline .marquee h1 {
+  font-size: 3em;
+  color: #ff2800;
+  position: absolute;
+  max-width: 800px;
+  width: 200%;
+  height: 100%;
+  margin: 0;
+  line-height: 75px;
+  text-align: center;
+  /* Starting position */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  /* Apply animation to this element */
+  -moz-animation: marquee 8s linear infinite;
+  -webkit-animation: marquee 8s linear infinite;
+  animation: marquee 8s linear infinite;
+}
+@-moz-keyframes marquee {
+  0% {
+    -moz-transform: translateX(100%);
+  }
+  100% {
+    -moz-transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes marquee {
+  0% {
+    -webkit-transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
+}
+@keyframes marquee {
+  0% {
+    -moz-transform: translateX(100%);
+    /* Firefox bug fix */
+    -webkit-transform: translateX(100%);
+    /* Firefox bug fix */
+    transform: translateX(100%);
+  }
+  100% {
+    -moz-transform: translateX(-100%);
+    /* Firefox bug fix */
+    -webkit-transform: translateX(-100%);
+    /* Firefox bug fix */
+    transform: translateX(-100%);
+  }
+}
+body .wrapper .container navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 2em;
+  font-weight: bold;
+}
+body .wrapper .container .blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
